@@ -1,0 +1,907 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+
+
+  <title>OTX Tribe | Connect. Share. Explore.</title>
+
+  <meta name="description" content="Join OTX Tribe, a community to connect with people, share experiences, discover opportunities and explore together.">
+  <meta name="keywords" content="OTX Tribe, OTXS Community, Travel Community, Global Community, Connect, Explore">
+
+  <meta property="og:title" content="OTX Tribe | Connect. Share. Explore.">
+  <meta property="og:description" content="Find your people. Share your interests. Discover something new. Join OTX Tribe on WhatsApp.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --navy: #111827;
+      --navy-light: #1e293b;
+      --orange: #f59e0b;
+      --yellow: #fbbf24;
+      --ink: #172033;
+      --muted: #64748b;
+      --bg: #f5f6f9;
+      --line: #e2e8f0;
+      --white: #ffffff;
+      --soft: #fff7e8;
+      --green: #16a34a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 36px));
+      margin: auto;
+    }
+
+    /* Navigation */
+
+    header {
+      background: var(--navy);
+      color: var(--white);
+      border-bottom: 1px solid #263449;
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 1.2rem;
+      font-weight: 850;
+      letter-spacing: -.04em;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--orange);
+      color: var(--navy);
+      font-size: 23px;
+    }
+
+    .brand small {
+      display: block;
+      color: #cbd5e1;
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .03em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: .9rem;
+      color: #e2e8f0;
+    }
+
+    .nav-links a:hover {
+      color: var(--yellow);
+    }
+
+    .nav-join {
+      padding: 10px 16px;
+      background: var(--orange);
+      color: var(--navy) !important;
+      border-radius: 10px;
+      font-weight: 800;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 90px 0 105px;
+      background: linear-gradient(
+        125deg,
+        #111827 0%,
+        #1e293b 65%,
+        #493113 100%
+      );
+      color: var(--white);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid #f59e0b24;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 470px;
+      height: 470px;
+      right: -100px;
+      top: -190px;
+      box-shadow:
+        0 0 0 55px #f59e0b08,
+        0 0 0 110px #f59e0b05;
+    }
+
+    .hero::after {
+      width: 180px;
+      height: 180px;
+      left: -100px;
+      bottom: -110px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 790px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border: 1px solid #ffffff25;
+      border-radius: 100px;
+      background: #ffffff10;
+      color: #fde68a;
+      font-size: .82rem;
+      font-weight: 750;
+    }
+
+    .hero h1 {
+      margin: 24px 0 15px;
+      font-size: clamp(3.2rem, 8vw, 6.2rem);
+      line-height: .98;
+      letter-spacing: -.075em;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+    }
+
+    .tagline {
+      margin: 0 0 18px;
+      color: #fde68a;
+      font-size: 1.15rem;
+      font-weight: 750;
+      letter-spacing: .04em;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin: auto;
+      color: #cbd5e1;
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 13px 22px;
+      border-radius: 12px;
+      font-weight: 850;
+      transition: .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: #172033;
+      box-shadow: 0 8px 25px #f59e0b30;
+    }
+
+    .btn-primary:hover {
+      background: var(--yellow);
+    }
+
+    .btn-secondary {
+      border: 1px solid #ffffff45;
+      color: white;
+      background: #ffffff0d;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      color: #94a3b8;
+      font-size: .82rem;
+    }
+
+    /* Introduction */
+
+    .intro {
+      padding: 75px 0 55px;
+      text-align: center;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 35px;
+    }
+
+    .section-label {
+      color: var(--orange-dark);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin: 9px 0 12px;
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      letter-spacing: -.05em;
+      line-height: 1.15;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Community cards */
+
+    .features {
+      padding: 15px 0 75px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .feature {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 25px;
+      transition: .2s ease;
+    }
+
+    .feature:hover {
+      border-color: var(--orange);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px #0f172a0b;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--soft);
+      font-size: 1.45rem;
+      margin-bottom: 16px;
+    }
+
+    .feature h3 {
+      margin: 0 0 7px;
+      font-size: 1.05rem;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    /* Topics */
+
+    .topics {
+      padding: 65px 0;
+      background: #fff;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .topic {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #fff;
+      font-size: .9rem;
+      font-weight: 750;
+    }
+
+    .topic span {
+      font-size: 1.35rem;
+    }
+
+    /* Join section */
+
+    .join-section {
+      padding: 80px 0;
+    }
+
+    .join-card {
+      position: relative;
+      overflow: hidden;
+      padding: 55px 30px;
+      border-radius: 24px;
+      text-align: center;
+      background: linear-gradient(120deg, #111827, #263449);
+      color: #fff;
+    }
+
+    .join-card::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border: 1px solid #f59e0b30;
+      border-radius: 50%;
+      right: -90px;
+      bottom: -160px;
+      box-shadow: 0 0 0 40px #f59e0b08;
+    }
+
+    .join-card-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .join-card h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      letter-spacing: -.05em;
+    }
+
+    .join-card p {
+      max-width: 570px;
+      margin: 0 auto 25px;
+      color: #cbd5e1;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 25px;
+      border-radius: 12px;
+      background: var(--green);
+      color: white;
+      font-weight: 850;
+      box-shadow: 0 8px 25px #16a34a30;
+      transition: .2s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background: #15803d;
+      transform: translateY(-2px);
+    }
+
+    .whatsapp-icon {
+      font-size: 1.25rem;
+    }
+
+    .join-small {
+      margin-top: 16px;
+      color: #94a3b8;
+      font-size: .8rem;
+    }
+
+    /* OTXS network */
+
+    .network {
+      padding: 10px 0 75px;
+      text-align: center;
+    }
+
+    .network-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .network-links a {
+      padding: 11px 17px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #fff;
+      color: var(--ink);
+      font-size: .88rem;
+      font-weight: 750;
+      transition: .2s;
+    }
+
+    .network-links a:hover {
+      border-color: var(--orange);
+      background: var(--soft);
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 32px 0;
+      background: var(--navy);
+      color: #e2e8f0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-inner strong {
+      font-size: 1.05rem;
+    }
+
+    .footer-inner p {
+      margin: 5px 0 0;
+      color: #94a3b8;
+      font-size: .82rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: .85rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--yellow);
+    }
+
+    @media(max-width: 800px) {
+      .nav-links a:not(.nav-join) {
+        display: none;
+      }
+
+      .hero {
+        padding: 75px 0 85px;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .topic-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 520px) {
+      .wrap {
+        width: min(100% - 26px, 1120px);
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 1.05rem;
+      }
+
+      .brand-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .nav-join {
+        padding: 9px 12px;
+        font-size: .82rem;
+      }
+
+      .hero {
+        padding: 65px 0 75px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .hero-description {
+        font-size: .96rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .intro {
+        padding: 60px 0 40px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+      }
+
+      .topic {
+        padding: 12px 10px;
+        font-size: .8rem;
+        gap: 7px;
+      }
+
+      .join-section {
+        padding: 55px 0;
+      }
+
+      .join-card {
+        padding: 45px 20px;
+      }
+
+      .whatsapp-btn {
+        width: 100%;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap nav">
+
+      <a class="brand" href="https://explore.otxs.de" aria-label="OTX Tribe home">
+        
+        <span>
+          OTX Tribe.
+          <small>by OTX Services · Discover and Explore</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#interests">Explore interests</a>
+        <a href="https://explore.otxs.de">OTX Home</a>
+        <a class="nav-join" href="#join">Join the Tribe ↗</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="wrap hero-content">
+
+        <div class="eyebrow">✦ A COMMUNITY WITHOUT BORDERS</div>
+
+        <h1>
+          OTX <span>Tribe.</span>
+        </h1>
+
+        <div class="tagline">
+          Connect. Share. Explore.
+        </div>
+
+        <p class="hero-description">
+          A place to meet interesting people, exchange ideas, discover
+          opportunities and share experiences. Whatever your interests,
+          there's room to connect and grow together.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#join">
+            Join Our Community ↗
+          </a>
+
+          <a class="btn btn-secondary" href="#about">
+            Discover OTX Tribe
+          </a>
+        </div>
+
+        <div class="hero-note">
+          Open to curious minds, explorers and people from everywhere.
+        </div>
+
+      </div>
+    </section>
+
+    <section class="intro wrap" id="about">
+
+      <div class="section-heading">
+        <div class="section-label">THE COMMUNITY</div>
+
+        <h2>More than a group. A place to belong.</h2>
+
+        <p>
+          OTX Tribe brings people together around shared interests,
+          experiences and ideas. Discover new perspectives, exchange
+          knowledge and find opportunities to do more together.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="features wrap">
+
+      <div class="feature-grid">
+
+        <article class="feature">
+          <div class="feature-icon">🤝</div>
+          <h3>Connect with people</h3>
+          <p>
+            Meet people with different backgrounds, interests and
+            experiences.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">💡</div>
+          <h3>Share ideas</h3>
+          <p>
+            Exchange knowledge, discuss ideas and learn from the
+            experiences of others.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">🌍</div>
+          <h3>Discover opportunities</h3>
+          <p>
+            Explore collaborations, activities, projects and
+            interesting possibilities.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">🧭</div>
+          <h3>Explore together</h3>
+          <p>
+            Discover destinations, experiences, adventures and
+            new ways to spend your time.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">📚</div>
+          <h3>Learn and grow</h3>
+          <p>
+            Share resources, practical knowledge and learning
+            experiences with the community.
+          </p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">🚀</div>
+          <h3>Build something</h3>
+          <p>
+            Connect with people who want to create, collaborate
+            and turn ideas into action.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class="topics" id="interests">
+
+      <div class="wrap">
+
+        <div class="section-heading">
+          <div class="section-label">YOUR INTERESTS, YOUR SPACE</div>
+
+          <h2>There's more than one way to connect.</h2>
+
+          <p>
+            OTX Tribe welcomes conversations across different
+            interests and areas of life.
+          </p>
+        </div>
+
+        <div class="topic-grid">
+
+          <div class="topic"><span>✈️</span> Travel & Exploration</div>
+          <div class="topic"><span>🏔️</span> Adventure & Outdoors</div>
+          <div class="topic"><span>💻</span> Technology & Innovation</div>
+          <div class="topic"><span>📖</span> Learning & Education</div>
+          <div class="topic"><span>🎨</span> Creativity & Ideas</div>
+          <div class="topic"><span>💼</span> Work & Collaboration</div>
+          <div class="topic"><span>🎮</span> Games & Entertainment</div>
+          <div class="topic"><span>🌱</span> Lifestyle & Experiences</div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="join-section wrap" id="join">
+
+      <div class="join-card">
+
+        <div class="join-card-content">
+
+          <div class="section-label" style="color:#fbbf24">
+            YOUR NEXT CONNECTION STARTS HERE
+          </div>
+
+          <h2>Find your people. Join the Tribe.</h2>
+
+          <p>
+            Become part of OTX Tribe. Join our WhatsApp community
+            to connect, share experiences and stay connected with
+            what's happening.
+          </p>
+
+          <!-- Replace the URL below with your actual WhatsApp Community invite link -->
+          <a
+            class="whatsapp-btn"
+            id="whatsapp-join"
+            href="https://chat.whatsapp.com/REPLACE_WITH_YOUR_INVITE_LINK"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="whatsapp-icon">◉</span>
+            Join OTX Tribe on WhatsApp ↗
+          </a>
+
+          <div class="join-small">
+            By joining, you agree to interact respectfully and follow
+            the community guidelines.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="network wrap">
+
+      <div class="section-heading">
+        <div class="section-label">PART OF THE OTX NETWORK</div>
+
+        <h2>Discover more with OTX.</h2>
+
+        <p>
+          Explore the services and experiences available through
+          OTX Services.
+        </p>
+
+      </div>
+
+      <div class="network-links">
+
+        <a href="https://explore.otxs.de">Explore OTX</a>
+
+        <a href="https://go.explore.otxs.de">Go & Explore</a>
+
+        <a href="https://travel.explore.otxs.de">OTX Travel</a>
+
+        <a href="https://treks.explore.otxs.de">OTX Treks</a>
+
+        <a href="https://stays.explore.otxs.de">OTX Stays</a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div class="wrap footer-inner">
+
+      <div>
+        <strong>OTX Tribe.</strong>
+        <p>Connect. Share. Explore.</p>
+        <p>Part of OTX Services · Discover and Explore</p>
+        <p>© <span id="year"></span> OTX Services. All rights reserved.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://explore.otxs.de">OTX Home</a>
+        <a href="https://otxs.de/policy/">Policies</a>
+        <a href="mailto:otxs.de@gmail.com">Contact</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+    // Automatically update copyright year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // WhatsApp Community invite link
+    // Replace this placeholder with your actual invite URL.
+    const WHATSAPP_COMMUNITY_LINK =
+      "https://chat.whatsapp.com/REPLACE_WITH_YOUR_INVITE_LINK";
+
+    const joinButton = document.getElementById("whatsapp-join");
+
+    joinButton.href = WHATSAPP_COMMUNITY_LINK;
+
+    // Prevent accidental use of the placeholder invite link.
+    joinButton.addEventListener("click", function(event) {
+      if (
+        WHATSAPP_COMMUNITY_LINK.includes("REPLACE_WITH_YOUR_INVITE_LINK")
+      ) {
+        event.preventDefault();
+        alert("Please add your OTX Tribe WhatsApp Community invite link first.");
+      }
+    });
+  </script>
+
+</body>
+</html>
+
